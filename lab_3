@@ -1,0 +1,85 @@
+//building a queue like a linkedlist structure (so we need pointers)
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+
+    Node(int val) {
+        data = val;
+        next = NULL;
+    }
+};
+struct Queue {
+    Node* back;
+    Node* front;
+    int count;
+
+    Queue() {
+    back = NULL;
+    front = NULL;
+}
+
+
+    void enqueue(int val) {
+    Node* newNode = new Node(val);
+        if (front == NULL) {
+            front = newNode;
+            back = newNode;
+        }
+        else {
+            back->next = newNode;
+            back = back->next;
+        }
+        count++;
+        cout << back->data << " added to queue\n";
+}
+    void dequeue() {
+    if (front == NULL) {
+        cout << "Queue is empty!!\n";
+    }
+        else {
+            Node* temp = front;
+            front = front->next;
+
+        }
+        count--;
+        cout << front->data -1 << " dequeued from queue\n";
+}
+    void top() {
+        if (front == NULL) {
+            cout << "Queue is empty!!\n";
+        }
+        else {
+            cout <<front->data << " is top of the queue\n";
+            }
+}
+    bool isEmpty() {
+        if (front == NULL) {
+            cout << "EMPTY\n";
+        }
+        else {
+            cout << "queue is not empty\n";
+        }
+
+}
+    int size() {
+        return count;
+    }
+};
+
+int main() {
+    Queue myQueue;
+    //myQueue.isEmpty();
+    myQueue.enqueue(1);
+    myQueue.enqueue(2);
+    myQueue.enqueue(3);
+    myQueue.size();
+    myQueue.top();
+    myQueue.dequeue();
+    myQueue.dequeue();
+    myQueue.isEmpty();
+    myQueue.size();
+}
+
