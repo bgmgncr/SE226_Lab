@@ -1,0 +1,36 @@
+import random
+import string
+def replace():
+    replacements = {}
+    used_chars = set()
+
+    while len(replacements) < 5:
+        letter = input("Enter a SINGLE lowercase character: ").strip().lower()
+
+        if len(letter) == 1 and letter.isalpha() and letter not in replacements:
+            replacements[letter] = set()
+            while len(replacements[letter]) < 3:
+                replacement = input(f"Enter a replacement for '{letter}': ").strip()
+                if len(replacement) == 1 and replacement not in used_chars:
+                    replacements[letter].add(replacement)
+                    used_chars.add(replacement)
+                else:
+                    print("Enter a SINGLE unique character!")
+
+        else:
+            print("Enter a SINGLE unique character!")
+
+    return replacements
+
+replacement_dict = replace()
+print(f"Replacement dictionary: {replacement_dict}")
+
+
+
+def random_replace():
+    passwords = []
+    for _ in range(5):
+        password = ''.join(random.choices(string.ascii_lowercase, k=15))
+        passwords.append(password)
+    while password in passwords:
+        len(password)
