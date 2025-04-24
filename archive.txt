@@ -1,0 +1,6 @@
+Book,B001,Uğultulu Tepeler,1847,Emily Brönte,775
+Book,B002,Kendine ait bir Oda,1929,Virginia Woolf,464
+Article,A101,Quantum Computing,2022,Nature,10.1234/qc567
+Article,A102,Neural Interfaces,2020,Science,10.5678/ni891
+Podcast,P301,TechTalk AI,2023,Jane Doe,45
+Podcast,P302,MindCast,2017,John Smith,60
